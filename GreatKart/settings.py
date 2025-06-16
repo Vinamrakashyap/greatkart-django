@@ -42,6 +42,7 @@ EXTERNAL_APPS = [
     'category',
     'accounts',
     'store',
+    'carts',
 ]
 INSTALLED_APPS += EXTERNAL_APPS  
 
@@ -55,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'clothkart.urls'
+ROOT_URLCONF = 'GreatKart.urls'
 
 TEMPLATES = [
     {
@@ -68,12 +69,13 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'category.context_processors.menu_links',
+                'carts.context_processors.counter',
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'clothkart.wsgi.application'
+WSGI_APPLICATION = 'GreatKart.wsgi.application'
 AUTH_USER_MODEL = 'accounts.Account'
 
 
@@ -125,7 +127,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR/'static'
 STATICFILES_DIRS = [
-    'clothkart/static',
+    'GreatKart/static',
 ]
 
 # Default primary key field type
